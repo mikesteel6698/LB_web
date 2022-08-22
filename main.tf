@@ -7,7 +7,7 @@ terraform {
     # encrypt = true
   }
 }
-
+#lol
 # resource "aws_dynamodb_table" "lock_table" {
 #   name = "lock_table"
 #   billing_mode = "PAY_PER_REQUEST"
