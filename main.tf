@@ -38,7 +38,6 @@ resource "aws_instance" "pro_1" {
     inline = [
       "sudo echo 'ubuntu ALL=(ALL:ALL) ALL' >> /etc/sudoers",
       "sudo apt update -y",
-      "sudo apt install curl -y",
       "sudo apt install -y software-properties-common",
       "sudo add-apt-repository --yes --update ppa:ansible/ansible",
       "sudo apt install ansible -y",
