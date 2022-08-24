@@ -7,7 +7,7 @@ terraform {
     encrypt        = true
   }
 }
-#
+
 module "testvpc_module" {
   source            = "../modules/vpc_module"
   vpc_cidr          = var.test_vpc_cidr
