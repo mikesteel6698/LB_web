@@ -75,7 +75,7 @@ resource "aws_instance" "pro_1" {
       "sudo unzip ${var.home_directory}/ansible/awscli-exe-linux-x86_64.zip -d ${var.home_directory}/ansible/",
       "sudo ${var.home_directory}/ansible/aws/install",
       "cd ${var.home_directory}/ansible/inventory/",
-      "chmod 600 ${var.home_directory}/.ssh/new.pem",
+      "chmod 400 ${var.home_directory}/.ssh/new.pem",
       "ansible-playbook newpb.yaml"
     ]
 
