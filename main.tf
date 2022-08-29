@@ -9,17 +9,20 @@ terraform {
 }
 
 module "testvpc_module" {
-  source            = "../modules/vpc_module"
+  source            = "./modules/vpc_module"
   vpc_cidr          = var.test_vpc_cidr
   availability_zone = var.test_az[*]
 }
 
 module "testsg_module" {
-  source = "../modules/sg_module"
+  source = "./modules/sg_module"
   vpc_id = module.testvpc_module.vpc_id
 }
 
 resource "aws_instance" "pro_1" {
+  depends_on = [
+    aws_instance.pro_2
+  ]
   ami               = var.ami_id
   instance_type     = var.instance_type
   availability_zone = var.test_az[0]
